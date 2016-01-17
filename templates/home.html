@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../static/materialize/css/materialize.min.css">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="../static/materialize/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../static/materialize/js/materialize.min.js"></script>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.slider').slider({full_width: true});
+			$(".button-collapse").sideNav();
+		});
+	</script>
+
+	<!-- Menu de navegação -->
+	<nav class="grey darken-1">
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo">&nbsp;Bilheteria.com</a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="/cadastrar">Cadastre-se</a></li>
+				<li><a href="/login">Fazer Login</a></li>
+				<li><a href="collapsible.html">Javascript</a></li>
+				<li><a href="mobile.html">Mobile</a></li>
+			</ul>
+			<ul class="side-nav" id="mobile-demo">
+				<li><a href="/cadastrar">Cadastre-se</a></li>
+				<li><a href="/login">Fazer Login</a></li>
+				<li><a href="collapsible.html">Javascript</a></li>
+				<li><a href="mobile.html">Mobile</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<!-- slider -->
+	<div class="slider">
+		<ul class="slides">
+			<li>
+				<img src="http://www.soumineiro.com.br/blog/wp-content/uploads/2015/12/12271550_10153390772329234_1220164535_o-1024x388.jpg" height="600px"> <!-- random image -->
+				<div class="caption left-align">
+					
+					
+				</div>
+			</li>
+			<li>
+				<img src="http://aredacao.com.br/upload/content/LMEw3N0WNnKmidefOljbt-XLNjB1_-0Iw1buIDB3" height="600px"> <!-- random image -->
+				<div class="caption left-align">
+					
+					
+				</div>
+			</li>
+			<li>
+				<img src="https://odairterra.files.wordpress.com/2010/09/flyer_22x11cm_ccs_2010-800x400.jpg" 
+				width="600px"> <!-- random image -->
+				<div class="caption right-align">
+					
+				</div>
+			</li>			
+		</ul>
+	</div>
+
+	<br><br><br><br><br><br><br><br>
+	<!-- conteúdo da página -->
+	<div class="row">
+		<h3 class="center-align">
+			Eventos deste Mês
+		</h3>
+		<hr width="80%">
+	</div>	
+	<div class="row">
+
+		<div class="col s4">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="http://www.caldasnet.com.br/images/_upload/agenda/2015110515157_08274a40f1f9ad1c08a3bc383a4c702a.png" height="190px">
+				</div>
+				<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Verão Sertanejo<i class="material-icons right">more_vert</i></span>
+					<p><a href="#">Adquirir Ingressos</a></p>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Verão Sertanejo<i class="material-icons right">close</i></span>
+					<p>
+						Este é um dos maiores eventos de música sertaneja do estado de Goiás com duração de 2 dias.<br> 
+						Ele acontece nos dias 16 e 17 de Janeiro no clube Lagoa Thermas Parque, em Caldas Novas
+					</p>
+				</div>
+			</div>			
+		</div>
+
+		
+		<div class="col s4">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" 
+					src="http://aredacao.com.br/upload/content/LMEw3N0WNnKmidefOljbt-XLNjB1_-0Iw1buIDB3" height="190px">
+				</div>
+				<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Insane House<i class="material-icons right">more_vert</i></span>
+					<p><a href="#">Adquirir Ingressos</a></p>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Insane House<i class="material-icons right">close</i></span>
+					<p>
+						Venha curtir o melhor do heletro house na Zuum Disco Club com a equipe BPM DJ's.<br>
+						O evento acontecerá no dia 31 de Janeiro e é totalmente open bar.
+					</p>
+				</div>
+			</div>			
+		</div>
+
+		<div class="col s4">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="https://odairterra.files.wordpress.com/2010/09/flyer_22x11cm_ccs_2010-800x400.jpg" height="190px">
+				</div>
+				<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Caldas Country<i class="material-icons right">more_vert</i></span>
+					<p><a href="#">Adquirir Ingressos</a></p>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Caldas Contry<i class="material-icons right">close</i></span>
+					<p>
+						O maior evento de música certaneja do Brasil.<br>
+						São 2 dias de show que vão até o amanhecer.						
+					</p>
+				</div>
+			</div>			
+		</div>
+
+
+	</div>
+
+	<!-- /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ -->
+
+
+	<!-- rodapé  -->	
+	<footer class="page-footer  grey darken-1">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Bilheteria.com LTDA</h5>
+					<p class="grey-text text-lighten-4">Av. Coronel Bento de Godoy - nº. 357 - Centro</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Mapa do Site</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Cadastre-se</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Fazer Login</a></li>						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© Hello World Sistemas - contato@helloworld.com.br
+				
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
