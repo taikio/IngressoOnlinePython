@@ -48,8 +48,51 @@
             Escolha seu ingresso
         </h2>
 
-        <a href="/logout" ><button class="logout">Sair</button></a>
-        <hr width="100%">
+        <a href="/logout" class="logout"><button class="btn">Sair</button></a>
+        <hr width="70%">
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+
+
+
+      <table class="striped highlight">
+        <thead>
+          <tr>
+              <th data-field="id">Descriçao do Ingresso</th>
+              <th data-field="name">valor unitario</th>
+              <th data-field="price">quantidade</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+        {% for i in _ingresso.retornarTodos() %}
+
+
+          <tr>
+            <td>{{ i.nome }}</td>
+            <td>{{ i.valor }}</td>
+            <td>{{ i.quantidade }}</td>
+            <td>
+                <div class="col s2">
+                    <input type="text" name="quantidade" width="10px">
+
+                    <button class="btn">Comprar</button>
+                </div>
+            </td>
+          </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+      </table>
+
+
+
+        </div>
     </div>
 
 </body>

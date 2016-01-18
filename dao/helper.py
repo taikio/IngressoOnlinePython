@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 import sqlite3
-
 
 class DaoHelper():
 
@@ -27,6 +27,6 @@ class DaoHelper():
                        nome varchar(200),
                        categoria varchar(200),
                        valor real,
-                       quantidade integer)"""
+                       quantidade integer); """
 
         self.cursor.execute(sqlIngresso)

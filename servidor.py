@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, redirect, render_template, url_for, request, session, flash
+from flask import Flask, redirect, render_template, url_for, request, session, flash, g
 from model import pessoa, ingresso
 from dao import helper
 from dao import connection, pessoaDao, ingressoDao, compraDao
@@ -11,6 +11,7 @@ _pessoa = pessoa.Pessoa()
 _ingresso = ingresso.Ingresso()
 _helper = helper.DaoHelper()
 _helper.criarTabelas()
+_listaDeIngressos = list()
 
 
 @app.route('/')
@@ -50,6 +51,8 @@ def logar():
         session['username'] = _pessoa.username
         session['nivel_permissao'] = _pessoa.nivelPermissao
 
+        print(session['nivel_permissao'])
+
         return redirect(url_for('loja'))
 
     return 'Usuário ou senha inválidos'
@@ -58,14 +61,40 @@ def logar():
 @app.route('/loja')
 def loja():
 
+
+
+    _listaDeIngressos = _ingresso.retornarTodos()
     if session:
         return render_template('loja.html')
     return redirect(url_for('logar'))
 
+
 @app.route('/logout')
 def logout():
-    session.pop('username',None)
+    session.clear()
     return redirect(url_for('home'))
+
+
+@app.route('/admin')
+def admin():
+
+    if session:
+        if session['nivel_permissao'] == 'admin':
+            return render_template('admin.html')
+
+    return redirect(url_for('home'))
+
+@app.route('/cadastraringresso', methods=['POST'])
+def cadastrarIngresso():
+
+    nome = request.form['nome']
+    categoria = request.form['categoria']
+    valor = request.form['valor']
+    quantidade = request.form['quantidade']
+    _ingresso.cadastrar(nome, categoria, valor, quantidade)
+
+    return redirect(url_for('admin'))
+
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
