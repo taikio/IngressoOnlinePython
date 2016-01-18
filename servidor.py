@@ -64,7 +64,7 @@ def loja():
 
 @app.route('/logout')
 def logout():
-    session.pop('username',None)
+    session.clear()
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
