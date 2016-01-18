@@ -10,7 +10,7 @@ class Pessoa():
         self.username = ''
         self.senha = ''
         self.nivelPermissao = ''
-        self.dao = pessoaDao.PessoaDao()
+        self.dao = pessoaDao.PessoaDao(self)
 
     def cadastrar(self, nome, email, username, senha):
         self.nome = nome

@@ -48,12 +48,24 @@ def logar():
 
     if _pessoa.autenticar(username, senha):
         session['username'] = _pessoa.username
-        session['senha'] = _pessoa.senha
         session['nivel_permissao'] = _pessoa.nivelPermissao
 
-        return render_template('admin.html')
+        return redirect(url_for('loja'))
 
     return 'Usuário ou senha inválidos'
+
+
+@app.route('/loja')
+def loja():
+
+    if session:
+        return render_template('loja.html')
+    return redirect(url_for('logar'))
+
+@app.route('/logout')
+def logout():
+    session.pop('username',None)
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)

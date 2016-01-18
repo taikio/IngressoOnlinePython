@@ -1,12 +1,12 @@
 import sqlite3
-from model import pessoa
+
 
 
 class PessoaDao():
-    def __init__(self):
+    def __init__(self,pessoa):
         self.con = None
         self.cursor = None
-        self.pessoa = pessoa.Pessoa()
+        self.pessoa = pessoa
 
     def iniciaConexao(self):
 
@@ -53,7 +53,6 @@ class PessoaDao():
             for registro in self.cursor.fetchall():
                 if registro[3] == username and registro[4] == senha:
                     self.pessoa.username = registro[3]
-                    self.pessoa.senha = registro[4]
                     self.pessoa.nivelPermissao = registro[5]
 
                     self.fechaConexao()

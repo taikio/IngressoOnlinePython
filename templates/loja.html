@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/materialize/css/materialize.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="../static/materialize/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../static/materialize/js/materialize.min.js"></script>
+    <title>Loja - Bilheteria.com</title>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(".button-collapse").sideNav();
+        });
+
+    </script>
+    <style>
+        .logout{
+        float: right;
+        margin-top: 15px;
+        }
+    </style>
+    <!-- Menu de navegação -->
+<nav class="grey darken-1">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">&nbsp;Bilheteria.com</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/cadastrar">Cadastre-se</a></li>
+            <li><a href="/logar">Fazer Login</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="/cadastrar">Cadastre-se</a></li>
+            <li><a href="/login">Fazer Login</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+    </div>
+</nav>
+
+<br><br>
+    <div class="row">
+        <h2 class="center">
+            Escolha seu ingresso
+        </h2>
+
+        <a href="/logout" ><button class="logout">Sair</button></a>
+        <hr width="100%">
+    </div>
+
+</body>
+</html>
