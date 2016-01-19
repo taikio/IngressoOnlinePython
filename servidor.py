@@ -41,6 +41,8 @@ def cadastrar():
 def logar():
 
     if request.method == 'GET':
+        if session:
+            return redirect(url_for('home'))
         return render_template('login.html')
 
     username = request.form['username']
