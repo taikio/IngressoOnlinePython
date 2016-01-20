@@ -48,8 +48,58 @@
             Escolha seu ingresso
         </h2>
 
-        <a href="/logout" ><button class="logout">Sair</button></a>
-        <hr width="100%">
+        <a href="/logout" class="logout"><button class="btn">Sair</button></a>
+        <hr width="70%">
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+
+
+
+      <table class="striped highlight">
+        <thead>
+          <tr>
+              <th data-field="id">Descriçao do Ingresso</th>
+              <th data-field="tipe">Tipo</th>
+              <th data-field="name">valor unitario</th>
+              <th data-field="price">quantidade</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          {% for i in lista %}
+
+
+          <tr>
+            <td>{{ i.nome }}</td>
+            <td>{{ i.tipoIngresso }}</td>
+            <td>{{ i.valor }}</td>
+            <td>{{ i.quantidade }}</td>
+            <td>
+                <div class="col s2">
+                    <form action="compraringresso" method="post">
+                    <input type="number" name="quantidade" width="10px">
+                    <input type="hidden" name="nome" value="{{ i.nome }}">
+                    <input type="hidden" name="tipo" value="{{ i.tipoIngresso }}">
+                    <input type="hidden" name="valor" value="{{ i.valor }}">
+
+                    <button class="btn">Comprar</button>
+                    </form>
+                </div>
+            </td>
+          </tr>
+
+          {% endfor %}
+
+        </tbody>
+
+      </table>
+
+
+
+        </div>
     </div>
 
 </body>

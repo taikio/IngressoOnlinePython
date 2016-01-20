@@ -1,14 +1,24 @@
-
+from dao import ingressoDao
 
 class Ingresso():
 
     def __init__(self):
         self.id = 0
-        self.descicao = ''
+        self.nome = ''
         self.tipoIngresso = ''
         self.valor = 0.00
         self.quantidade = 0
+        self.dao = ingressoDao.IngressoDao()
 
-    def comprar(self, quantidade, tipoIngresso):
+    def cadastrar(self, nome, tipoIngresso, valor, quantidade):
 
-        return None
+        self.dao.cadastrar(nome, tipoIngresso, valor, quantidade)
+
+        return
+
+    def retornarTodos(self):
+
+        lista = list()
+        lista = self.dao.retornarTodos(self)
+
+        return lista

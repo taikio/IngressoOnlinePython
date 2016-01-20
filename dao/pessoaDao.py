@@ -1,7 +1,6 @@
 import sqlite3
 
 
-
 class PessoaDao():
     def __init__(self,pessoa):
         self.con = None
