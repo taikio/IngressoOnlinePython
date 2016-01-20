@@ -17,7 +17,7 @@ class Pessoa():
         self.email = email
         self.username = username
         self.senha = senha
-        self.nivelPermissao = 'admin'
+        self.nivelPermissao = 'default'
 
         if self.dao.cadastrar(self.nome,self.email,self.username,self.senha,self.nivelPermissao):
             return True

@@ -40,11 +40,21 @@ class IngressoDao():
             self.cursor.execute(sql)
 
             for registro in self.cursor.fetchall():
+
                 ingresso.nome = registro[1]
                 ingresso.tipoIngresso = registro[2]
                 ingresso.valor = registro[3]
                 ingresso.quantidade = registro[4]
+
+                print(ingresso.nome)
                 lista.append(ingresso)
+
+
+
+
+            for i in lista:
+                print("-------")
+                print(i.nome)
 
             return lista
         except:

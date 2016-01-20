@@ -42,3 +42,6 @@ class DaoHelper():
                         comprador varchar(200));"""
 
         self.cursor.execute(sqlCompra)
+
+
+
