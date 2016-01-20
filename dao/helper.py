@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 
+
 class DaoHelper():
 
     def __init__(self):
         self.con = None
         self.cursor = None
-
 
     def criarTabelas(self):
         self.con = sqlite3.connect('ingressos.db')
@@ -31,8 +31,14 @@ class DaoHelper():
 
         self.cursor.execute(sqlIngresso)
 
-        sqlCompra = """ CRATE TABLE IF NOT EXISTS compra
+
+        sqlCompra = """ CREATE TABLE IF NOT EXISTS compra
                         (id integer primary key autoincrement,
                         nome_ingresso varchar(200),
                         tipo_ingresso varchar(200),
-                        valor_unitario """
+                        quantidade integer,
+                        valor_unitario real,
+                        valor_total real,
+                        comprador varchar(200));"""
+
+        self.cursor.execute(sqlCompra)

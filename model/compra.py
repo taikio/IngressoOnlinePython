@@ -11,10 +11,17 @@ class Compra():
         self.valorUnit = None
         self.valorTotal = None
         self.comprador = None
-        # self.dao = compraDao.CompraDao()
+        self.dao = compraDao.CompraDao()
 
-    # def cadastrar(self, nomeIngresso, tipoIngresso, quantidade,valorUnit,valorTotal,comprador):
-    #
-    #   #  if dao.cadastrar(nomeIngresso, tipoIngresso, quantidade,valorUnit,valorTotal,comprador):
-    #         return True
-    #     return False
+    def cadastrar(self, nomeIngresso, tipoIngresso, quantidade,valorUnit,valorTotal,comprador):
+
+       if self.dao.cadastrar(nomeIngresso, tipoIngresso, quantidade,valorUnit,valorTotal,comprador):
+           return True
+
+       return False
+
+    def retornarPorUsuario(self,comprador):
+
+        lista = self.dao.retornarPorUsuario(comprador,self)
+
+        return lista

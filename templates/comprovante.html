@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../static/materialize/css/materialize.min.css">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="../static/materialize/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../static/materialize/js/materialize.min.js"></script>
+	<title>Comprovante</title>
+</head>
+<body>	
+	<div class="container">
+		<button style="float: right;" onclick="window.print();">Imprimir</button>
+		<p align="justify">
+			Olá {{ user }},<br>
+			Este é o seu comprovante de compra de ingresso.<br>
+			É necessário imprimir este documento e apresentá-lo na bilheteria do evento para retirar os ingressos
+			<br><br>
+			<center><b>Descrição dos produtos</b></center>
+			<br>
+			<hr width="80%">
+			<br>
+
+			<table class="striped highlight">
+				<thead>
+					<tr>
+						<th data-field="id">Descriçao do Ingresso</th>
+						<th data-field="tipe">Tipo</th>
+						<th data-field="unit_value">valor unitario</th>
+						<th data-field="total_value">Valor total</th>
+						<th data-field="price">quantidade</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					{% for i in lista %}
+
+
+					<tr>
+						<td>{{ i.nomeIngresso }}</td>
+						<td>{{ i.tipoIngresso }}</td>
+						<td>{{ i.valorUnit }}</td>
+						<td>{{ i.valorTotal }}</td>
+						<td>{{ i.quantidade }}</td>						
+					</tr>
+
+					{% endfor %}
+
+				</tbody>
+
+			</table>
+		</p>
+	</div>	
+
+
+
+
+</body>
+</html>
